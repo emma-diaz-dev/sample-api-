@@ -14,5 +14,6 @@ func MapURLs(r *gin.Engine) {
 	r.POST("/entity", controller.EntityPost)
 	r.GET("/examples", controller.ExampleGetAll)
 	r.GET("/index/:index_name/new", controller.NewIndex)
+	r.GET("/sites/:site_id", controller.GetBySite)
 	// r.GET("/examples/:example_id")
 }

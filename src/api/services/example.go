@@ -2,6 +2,7 @@ package services
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"time"
 
@@ -11,8 +12,22 @@ import (
 
 var (
 	baseRC = rc.CreateBaseRestClient(120 * time.Millisecond)
+	sites  = map[string]map[string]string{
+		"properati": map[string]string{
+			"_id":   "5c21a5e0d717114e2798a21f",
+			"name":  "zonaprop",
+			"link":  "https://www.zonaprop.com.ar",
+			"email": "atencionainmobiliarias@zonaprop.com.ar",
+		},
+	}
 )
 
+func GetSiteByID(siteID string) (interface{}, error) {
+	if res, ok := sites[siteID]; ok {
+		return res, nil
+	}
+	return nil, errors.New("Site Not Found")
+}
 func GetExamples() (*domain.RequestEntity, error) {
 	e := &domain.RequestEntity{}
 
