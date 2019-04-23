@@ -13,11 +13,17 @@ import (
 var (
 	baseRC = rc.CreateBaseRestClient(120 * time.Millisecond)
 	sites  = map[string]map[string]string{
-		"properati": map[string]string{
+		"zonaprop": map[string]string{
 			"_id":   "5c21a5e0d717114e2798a21f",
 			"name":  "zonaprop",
 			"link":  "https://www.zonaprop.com.ar",
 			"email": "atencionainmobiliarias@zonaprop.com.ar",
+		},
+		"properati": map[string]string{
+			"_id":   "5c21a5e0d717114e2798a220",
+			"name":  "properati",
+			"link":  "https://www.properati.com.ar",
+			"email": "--",
 		},
 	}
 )
